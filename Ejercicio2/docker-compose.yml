@@ -27,7 +27,7 @@ services:
       node-nginx-net:
         ipv4_address: 172.80.0.10
     ports:
-      - "443"
+      - "8080"
 
   mi-nginx:
     image: nginx

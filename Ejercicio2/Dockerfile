@@ -1,5 +1,8 @@
 FROM node:14
 
-COPY ./proyecto-ud-1 /home
+EXPOSE 8080
+WORKDIR /var/app
+ADD  . /var/app
+RUN npm install
 
-CMD ["/bin/bash"]
+CMD npm start
