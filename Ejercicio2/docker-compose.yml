@@ -10,8 +10,6 @@ services:
         ipv4_address: 172.40.0.10
     volumes:
       - mongo-vol:/data/db
-    ports:
-      - "8081:8081"
 
   mi-node:
     build:
@@ -26,8 +24,6 @@ services:
         ipv4_address: 172.40.0.11
       node-nginx-net:
         ipv4_address: 172.80.0.10
-    ports:
-      - "8080:8080"
 
   mi-nginx:
     image: nginx
