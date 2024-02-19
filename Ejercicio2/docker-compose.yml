@@ -1,10 +1,9 @@
-# docker run -d --name mi-mongo --net mi-mysql-red -v mi-mysql-vol:/data/db mongo
 services:
   mi-mongo:
     image: mongo
-    container_name: mi-mongo # --name mi-mongo
-    stdin_open: true # -i
-    tty: true # -t
+    container_name: mi-mongo
+    stdin_open: true
+    tty: true
     networks:
       mongo-node-net:
         ipv4_address: 172.40.0.10
@@ -17,8 +16,8 @@ services:
       dockerfile: Dockerfile
     image: mi-node-image
     container_name: mi-node
-    stdin_open: true # -i
-    tty: true # -t
+    stdin_open: true
+    tty: true
     networks:
       mongo-node-net:
         ipv4_address: 172.40.0.11
@@ -33,8 +32,6 @@ services:
     networks:
       node-nginx-net:
         ipv4_address: 172.80.0.11
-    ports:
-      - "80:80"
 
 networks:
   mongo-node-net:
